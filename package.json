@@ -1,0 +1,23 @@
+{
+  "name": "eodhistoricaldata-api",
+  "version": "1.0.0",
+  "description": "eodhistoricaldata.com API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janlukasschroeder/eodhistoricaldata-api.git"
+  },
+  "keywords": [
+    "eodhistoricaldata.com",
+    "API"
+  ],
+  "author": "Jan Schroeder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janlukasschroeder/eodhistoricaldata-api/issues"
+  },
+  "homepage": "https://github.com/janlukasschroeder/eodhistoricaldata-api#readme"
+}
