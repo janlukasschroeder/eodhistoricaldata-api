@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/janlukasschroeder/eodhistoricaldata-api/issues"
   },
-  "homepage": "https://github.com/janlukasschroeder/eodhistoricaldata-api#readme"
+  "homepage": "https://github.com/janlukasschroeder/eodhistoricaldata-api#readme",
+  "dependencies": {
+    "csvtojson": "^2.0.8",
+    "dotenv": "^6.2.0",
+    "request": "^2.88.0"
+  }
 }
