@@ -15,7 +15,7 @@ module.exports.getFundamentals = symbol => {
  * @returns {*}
  */
 module.exports.listSupportedEtfs = () => {
-  const csvFilePath = './assets/List_Of_Supported_ETFs.csv';
+  const csvFilePath = __dirname + '/assets/List_Of_Supported_ETFs.csv';
   return csv().fromFile(csvFilePath);
 };
 
