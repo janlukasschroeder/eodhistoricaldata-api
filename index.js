@@ -1,5 +1,4 @@
 const fetch = require('./src/fetch');
-const csv = require('csvtojson');
 const config = require('./src/config');
 
 module.exports.setToken = token => {
@@ -7,25 +6,11 @@ module.exports.setToken = token => {
 };
 
 module.exports.getFundamentals = symbol => {
-  return fetch(symbol);
+  const url = config.baseUrl + `/getFundamentals/${symbol}`;
+  return fetch(url);
 };
 
-/**
- * List Supported ETFs
- * @returns {*}
- */
 module.exports.listSupportedEtfs = () => {
-  const csvFilePath = __dirname + '/assets/List_Of_Supported_ETFs.csv';
-  return csv().fromFile(csvFilePath);
+  const url = config.baseUrl + `/listSupportedEtfs`;
+  return fetch(url);
 };
-
-/**
- * Bootstrap module
- */
-// const initialise = () => {
-//   if (!config.apiToken) {
-//     throw new SyntaxError('Please provide your API token');
-//   }
-// };
-//
-// initialise();

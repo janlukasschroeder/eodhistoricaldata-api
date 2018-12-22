@@ -1,10 +1,7 @@
 require('dotenv').config();
 
 const config = {
-  baseUrl: 'https://eodhistoricaldata.com/api',
-  paths: {
-    fundamentals: '/fundamentals'
-  },
+  baseUrl: 'https://finance-hub.herokuapp.com/eodhistoricaldata',
   apiToken: process.env.API_TOKEN
 };
 
