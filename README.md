@@ -5,15 +5,12 @@
 ## Getting Started
 
 - `npm install eodhistoricaldata-api`
-- Set your API token using `setToken('your token')` (see below)
+- No API token required
 
 ### Example
 
 ```js
 const api = require('eodhistoricaldata-api');
-
-// insert your API token here
-api.setToken('YOUR API TOKEN');
 
 // get fundamentals of Tesla (symbol: TSLA)
 api.getFundamentals('TSLA').then(result => console.log(result));
@@ -105,7 +102,7 @@ Returns a list of supported ETFs.
 
 Example:
 
-```json
+```js
 [
  { 'ETF Code': '3BLR',
     Exchange: 'LSE',
