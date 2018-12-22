@@ -8,8 +8,6 @@ module.exports = symbol => {
   const url =
     config.baseUrl + `/fundamentals/${symbol}.US?api_token=` + config.apiToken;
 
-  console.log(url);
-
   const options = {
     url,
     method: 'GET',
