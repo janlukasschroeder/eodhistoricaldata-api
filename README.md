@@ -105,14 +105,14 @@ Example:
 ```js
 [
  { 'ETF Code': '3BLR',
-    Exchange: 'LSE',
-    Country: 'UK',
-    ISIN: 'IE00BYTYHS72',
+    'Exchange': 'LSE',
+    'Country': 'UK',
+    'ISIN': 'IE00BYTYHS72',
     'ETF Name': 'Boost Brent Oil 3X Leverage Daily ETP' },
   { 'ETF Code': '3BRL',
-    Exchange: 'LSE',
-    Country: 'UK',
-    ISIN: 'IE00BYTYHS72',
+    'Exchange': 'LSE',
+    'Country': 'UK',
+    'ISIN': 'IE00BYTYHS72',
     'ETF Name': 'Boost Brent Oil 3X Leverage Daily ETP' },
   ...
 ]
