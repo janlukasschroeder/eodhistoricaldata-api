@@ -1,4 +1,4 @@
-# eodhistoricaldata.com API - Node.js
+# eodhistoricaldata.com API (React, Vue, Angular, Node.js)
 
 [eodhistoricaldata.com](https://eodhistoricaldata.com) API wrapper.
 
