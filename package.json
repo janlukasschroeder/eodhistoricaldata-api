@@ -1,6 +1,6 @@
 {
   "name": "eodhistoricaldata-api",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "eodhistoricaldata.com API",
   "main": "index.js",
   "scripts": {
