@@ -1,13 +1,17 @@
 # eodhistoricaldata.com API - Node.js
 
-[eodhistoricaldata.com](https://eodhistoricaldata.com) API wrapper
+[eodhistoricaldata.com](https://eodhistoricaldata.com) API wrapper.
 
-## Getting Started
+Supports client-side (React, Vue, Angular, etc.) and server-side (Node.js).
+
+# Getting Started
 
 - `npm install eodhistoricaldata-api`
 - No API token required
 
-### Example
+# Examples
+
+## Node.js
 
 ```js
 const api = require('eodhistoricaldata-api');
@@ -19,9 +23,28 @@ api.getFundamentals('TSLA').then(result => console.log(result));
 api.listSupportedEtfs().then(etfs => console.log(etfs));
 ```
 
-## Documentation
+## React
 
-### getFundamentals(symbol)
+Live Demo (code sandbox): https://codesandbox.io/s/znoo29zp74
+
+```js
+import api from 'eodhistoricaldata-api';
+
+class Eodhistoricaldata extends React.Component {
+  componentDidMount() {
+    api.getFundamentals('VGT').then(data => this.setState({ data }));
+  }
+
+  render() {
+    // ...
+    return <pre>{JSON.stringify(this.state.data, null, 1)}</pre>;
+  }
+}
+```
+
+# Documentation
+
+## getFundamentals(symbol)
 
 - `symbol` - any symbol of a company, ETF, or Mutual Fund
 
@@ -92,7 +115,7 @@ Returns company, ETF, and Mutual Fund fundamentals.
   - Morning Star Data: Ratio, Category_Benchmark, Sustainability Ratio.
   - Performance: Volatility, Expected Returns, Sharp Ratio, Returns YTD/3 years/5 years/10 years.
 
-### listSupportedEtfs()
+## listSupportedEtfs()
 
 ```js
 api.listSupportedEtfs().then(etfs => ... )
