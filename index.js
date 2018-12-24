@@ -6,11 +6,34 @@ module.exports.setToken = token => {
 };
 
 module.exports.getFundamentals = symbol => {
-  const url = config.baseUrl + `/getFundamentals/${symbol}`;
-  return fetch(url);
+  const path = `/getFundamentals/${symbol}`;
+  return fetch(path);
+};
+
+module.exports.getHistoricalEodData = symbol => {
+  const path = `/getHistoricalEodData/${symbol}`;
+  return fetch(path);
+};
+
+module.exports.getHistoricalEodData = ({
+  symbol,
+  from,
+  to,
+  period,
+  order,
+  filter
+}) => {
+  const path =
+    `/getHistoricalEodData/${symbol}?fmt=json` +
+    (from ? `&from=${from}` : '') +
+    (to ? `&to=${to}` : '') +
+    (period ? `&period=${period}` : '') +
+    (order ? `&order=${order}` : '') +
+    (filter ? `&filter=${filter}` : '');
+  return fetch(path);
 };
 
 module.exports.listSupportedEtfs = () => {
-  const url = config.baseUrl + `/listSupportedEtfs`;
-  return fetch(url);
+  const path = `/listSupportedEtfs`;
+  return fetch(path);
 };

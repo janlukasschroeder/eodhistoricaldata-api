@@ -2,10 +2,12 @@ const request = require('request');
 const assert = require('assert');
 const config = require('./config');
 
-module.exports = baseUrl => {
-  assert.notStrictEqual(baseUrl, undefined);
+module.exports = path => {
+  assert.notStrictEqual(path, undefined);
 
-  const url = baseUrl + `?api_token=` + config.apiToken;
+  const combinator = path.includes('?') ? '&' : '?';
+  const { baseUrl, apiToken } = config;
+  const url = baseUrl + path + combinator + `api_token=` + apiToken;
 
   const options = {
     url,

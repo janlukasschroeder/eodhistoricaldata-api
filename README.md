@@ -16,6 +16,17 @@ Supports client-side (React, Vue, Angular, etc.) and server-side (Node.js).
 ```js
 const api = require('eodhistoricaldata-api');
 
+// get historical end-of-day stock price of Apple
+const options = {
+  symbol: 'AAPL', // ticker
+  from: '2018-02-01', // YYYY-MM-DD [optional]
+  to: '2018-10-10', // YYYY-MM-DD [optional]
+  period: 'd', // d = day, w = week, m = month [optional]
+  order: 'd' // d = descending, a = ascending [optional]
+  // filter: 'last_close' // last_close, last_volume [optional]
+};
+api.getHistoricalEodData(options).then(prices => console.log(prices));
+
 // get fundamentals of Tesla (symbol: TSLA)
 api.getFundamentals('TSLA').then(result => console.log(result));
 
@@ -25,7 +36,7 @@ api.listSupportedEtfs().then(etfs => console.log(etfs));
 
 ## React
 
-Live Demo (code sandbox): https://codesandbox.io/s/znoo29zp74
+Live Demo: https://codesandbox.io/s/znoo29zp74
 
 ```js
 import api from 'eodhistoricaldata-api';
@@ -43,6 +54,22 @@ class Eodhistoricaldata extends React.Component {
 ```
 
 # Documentation
+
+## getHistoricalEodData(options)
+
+Returns historical stock price data.
+
+Accepts an object as input:
+
+- `symbol` (string, required) - any symbol of a company, ETF, or Mutual Fund
+- `from` (string, optional) - YYYY-MM-DD format, e.g. `2018-02-01`
+- `to` (string, optional) - YYYY-MM-DD format, e.g. `2018-10-01`
+- `period` (string, optional) - use `d` for daily, `w` for weekly and `m`
+  for monthly prices. By default daily prices will be shown.
+- `order` (string, optional): use `a` for ascending dates (from old to new) and `d` for
+  descending dates (from new to old). By default dates are shown in ascending order.
+- `filter` (string, optional) - use `last_close` to get only the last value,
+  or `last_volume`
 
 ## getFundamentals(symbol)
 
